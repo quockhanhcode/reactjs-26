@@ -20,7 +20,7 @@ export default function ShoesStore() {
       <div className='grid grid-cols-3 gap-3 mt-[30px]'>
         {getListProduct()}
       </div>
-      <Modal detailProduct={detailProduct}/>
+      <Modal detailProduct={detailProduct} />
     </div>
   )
 }
