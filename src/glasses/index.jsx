@@ -2,21 +2,14 @@ import { useState } from "react";
 import data from "./data.json";
 
 export default function Glasses() {
-  const [glasses, getSlasses] = useState(data);
-  const [imgPath, getImgPath] = useState(glasses[0].url);
-  const [listDesc, getDesc] = useState(glasses[0].desc);
-
-  const changeState = (imges, text) => {
-    getImgPath(imges);
-    getDesc(text);
-  };
+  const [glasses, getSlasses] = useState(data[0]);
 
   const renDerCar = () => {
     return (
       <div className="card m-auto my-5" style={{ width: "18rem" }}>
-        <img src={imgPath} className="card-img-top" alt="..." />
+        <img src={glasses.url} className="card-img-top" alt="..." />
         <div className="card-body">
-          <p className="card-text">{listDesc}</p>
+          <p className="card-text">{glasses.desc}</p>
         </div>
       </div>
     );
@@ -28,12 +21,14 @@ export default function Glasses() {
         className="d-flex justify-content-start flex-wrap p-2"
         style={{ backgroundColor: "cadetblue" }}
       >
-        {glasses.map((item) => {
+        {data.map((item) => {
           return (
             <li
               key={item.id}
               style={{ listStyle: "none", width: "200px" }}
-              className="m-1" onClick={() => changeState(item.url, item.desc)}>
+              className="m-1 cursor-pointer"
+              onClick={() => getSlasses(item)}
+            >
               <img
                 src={item.url}
                 className="img-fluid img-thumbnail"

@@ -5,12 +5,15 @@ import EvenClick from "./even-click";
 import State from "./state";
 import ChangeColorCar from "./change-color-car";
 import ListKeys from "./list-keys";
-import Glasses from "./glasses"
+import Glasses from "./glasses";
+import Commmunication from "./communication";
+import ShoppingPhone from "./shopping-phone"
+import ShoesStore from "./shoesstore";
 
 function App() {
   return (
     <>
-    <Glasses/>
+      <ShoesStore/>
     </>
   );
 }
