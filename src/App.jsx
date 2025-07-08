@@ -13,7 +13,7 @@ import ShoesStore from "./shoesstore";
 function App() {
   return (
     <>
-      <ShoesStore/>
+      <Glasses />
     </>
   );
 }
