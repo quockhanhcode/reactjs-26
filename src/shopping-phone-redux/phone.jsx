@@ -1,10 +1,21 @@
 import React from "react";
+import { useDispatch } from "react-redux"; // gửi action lên reducer
+import { setDetailProduct } from "./../store/shoppingPhoneReducer"
+
 
 export default function Phone(props) {
   // console.log(props);
-  const { product, getProduct, handleAddCart } = props; // dùng destructuring
+  const dispatch = useDispatch(); // dùng để gửi action lên redux store
+  const { product, handleAddCart } = props; // dùng destructuring
   const handleDetail = () => {
-    getProduct(product);
+    // // getProduct(product);
+    // const action = {
+    //   type: "DETAIL_PRODUCT", //tên action
+    //   payload: product, // chứa dữ liệu  gửi lên reducer
+    // };
+    // dispatch(action) // gửi action lên redux store
+    // code rút gọn nhanh
+    dispatch(setDetailProduct(product))
   };
 
 

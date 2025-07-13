@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import Phone from "./phone";
 import Detail from "./detail";
-import data from "./data.json";
+// import data from "./data.json";
 import Modal from "./modal"
+import { useSelector } from "react-redux"; // lấy state từ redux
 
 export default function ShoppingPhone() {
-  const [listProduct, setListProduct] = useState(data);
+  const listProduct = useSelector((state) => state.shoppingPhone.listProduct);
+  // const [listProduct, setListProduct] = useState(data);
   const [productDetail, setProductDetail] = useState(listProduct[0]);
   const [carts, setCarts] = useState([]);
 
 
-  const getHandleDetail = (product) => {
-    // đối số
-    setProductDetail(product);
-  };
+  // const getHandleDetail = (product) => {
+  //   // đối số
+  //   setProductDetail(product);
+  // };
   // set cart
   const handleAddCart = (phone) => {
     // spread operator
@@ -75,7 +77,7 @@ export default function ShoppingPhone() {
         <Phone
           key={product.maSP}
           product={product}
-          getProduct={getHandleDetail}
+          // getProduct={getHandleDetail}
           handleAddCart={handleAddCart}
         />
       );

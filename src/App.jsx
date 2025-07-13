@@ -7,13 +7,15 @@ import ChangeColorCar from "./change-color-car";
 import ListKeys from "./list-keys";
 import Glasses from "./glasses";
 import Commmunication from "./communication";
-import ShoppingPhone from "./shopping-phone"
+// import ShoppingPhone from "./shopping-phone"
 import ShoesStore from "./shoesstore";
+import ShoppingPhone from "./shopping-phone-redux"
+
 
 function App() {
   return (
     <>
-      <ShoesStore />
+      <ShoppingPhone />
     </>
   );
 }
