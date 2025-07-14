@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux"; // gửi action lên reducer
-import { setDetailProduct } from "./../store/shoppingPhoneReducer"
+import { setDetailProduct, addToCart } from "./../store/shoppingPhoneReducer"
 
 
 export default function Phone(props) {
   // console.log(props);
   const dispatch = useDispatch(); // dùng để gửi action lên redux store
-  const { product, handleAddCart } = props; // dùng destructuring
+  const { product } = props; // dùng destructuring
   const handleDetail = () => {
     // // getProduct(product);
     // const action = {
@@ -17,7 +17,6 @@ export default function Phone(props) {
     // code rút gọn nhanh
     dispatch(setDetailProduct(product))
   };
-
 
 
   return (
@@ -39,7 +38,9 @@ export default function Phone(props) {
           Detail
         </button>
         <button
-          onClick={() => handleAddCart(product)}
+          onClick={() => {
+            dispatch(addToCart(product));
+          }}
           type="button"
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >
