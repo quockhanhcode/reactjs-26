@@ -1,0 +1,9 @@
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    transition: all 0.3s;
+}
+.circle{
+    border-radius: 50%;
+}

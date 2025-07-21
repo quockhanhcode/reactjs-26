@@ -41,6 +41,9 @@ export default function ShoppingPhone() {
   // quantity --> gia tri bang +1 or -1
   const handleCartQuantiy = (maSP, quanTity) => {
     // tim sp can thay doi
+
+
+    
     // const newCart = [...carts]
     // const index = carts.findIndex((item) => item.maSP === maSP);
     // if (index !== -1) {
